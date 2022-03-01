@@ -10,15 +10,14 @@ const create = (req, res) => {
     res.render('create')
 }
 const store = (req, res) => {
-    console.log(req.body)
-    // const book = new Book(req.body);
-    // book.save()
-    //     .then(result => {
-    //         res.redirect('/');
-    //     })
-    //     .catch(err => {
-    //         console.log(err);
-    //     });
+    const book = new Book(req.body);
+    book.save()
+        .then(result => {
+            res.redirect('/');
+        })
+        .catch(err => {
+            console.log(err);
+        });
 }
 
 
