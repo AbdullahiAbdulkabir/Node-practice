@@ -11,7 +11,7 @@ mongoose.connect(process.env.DATABASE_URL).then(result =>{
     app.listen(process.env.PORT)
 })
 
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({extended:true}))
 
 
 
