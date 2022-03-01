@@ -22,13 +22,15 @@
             </tr>
 
         <% }else { %>
-            <tr>
-                <% books.forEach(function(book){ %>
+
+            <% books.forEach(function(book){ %>
+                <tr>
                     <td> <%= book.name %></td>
                     <td> <%= book.author %></td>
                     <td> <%= book.type %></td>
-                <% }); %>
-            </tr>
+                </tr>
+            <% }); %>
+
         <% } %>
 
         </thead>
