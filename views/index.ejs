@@ -1,0 +1,37 @@
+<%- include('./partials/header') %>
+<div class="form-group float-right  ">
+    <div class="">
+        <a href="/create">
+            <button type="submit" class="btn btn-primary">Add a Book</button>
+        </a>
+    </div>
+</div>
+<div id="table">
+    <h1>Your books</h1>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Type</th>
+        </tr>
+        <% if (books.length === 0) { %>
+            <tr>
+                <td class="text-center bold">No books added yet</td>
+            </tr>
+
+        <% }else { %>
+            <tr>
+                <% books.forEach(function(book){ %>
+                    <td> <%= book.name %></td>
+                    <td> <%= book.author %></td>
+                <% }); %>
+            </tr>
+        <% } %>
+
+        </thead>
+        <tbody id='tableBody'></tbody>
+    </table>
+</div>
+<%- include('./partials/footer') %>
